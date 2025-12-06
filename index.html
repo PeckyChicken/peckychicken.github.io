@@ -23,7 +23,7 @@
                 --dark-neon-cyan: #005f5f;
                 --dark-neon-blue: #0c1f7a;
                 --dark-neon-magenta: #7a0066;
-                --dark-neon-purple: #3d0066;
+                --dark-neon-purple: rgb(61, 0, 102);
                 --dark-neon-pink: #7a2f63;
                 --dark-neon-white: #2b2b2e;
             }
@@ -38,7 +38,8 @@
                 text-align:center;
                 font-family: Arial, Helvetica, sans-serif;
                 text-shadow:currentColor 0 0 5px;
-
+                align-items: center;
+                align-content: center;
                 
             }
             body::selection{
@@ -63,29 +64,56 @@
             button:active{
                 color: var(--neon-white);
             }
+            a{
+                margin: 20px;
+                text-decoration: inherit;
+            }
             .game{
                 width: fit-content;
                 height: fit-content;
-                max-width: 100%;
-                max-height: 100%;
                 min-width: 100px;
                 min-height: 100px;
                 color: var(--neon-cyan);
                 border: currentColor 2px solid;
-                box-shadow: currentColor 0 0 5px, 0 0 10px;
+                box-shadow: currentColor 0 0 5px;
                 padding: 20px;
-                margin: 20px;
                 border-radius: 10px;
                 display: block;
             }
+            .logo{
+                width: 200px;
+                height: auto;
+                display: flex;
+                object-fit: contain;
+            }
+            .game-title{
+                text-shadow: inherit;
+                margin-top:none;
+                font-size: 30px;
+                color: var(--neon-white);
+            }
+
             #title{
                 font-size: 50px;
             }
             #games-panel{
-                width: 100%;
+                color: var(--neon-purple);
+                background-color: rgba(61,0,102,0.5);
+                border: currentColor 5px solid;
+                border-radius: 10px;
+                box-shadow: currentColor 0 0 5px, 0 0 10px;
+                display: flex;
+                flex-direction: row;
+                width: fit-content;
+                height: fit-content;
+                align-content: center;
                 align-items: center;
                 justify-content: center;
+                align-self: center;
                 margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
             }
             @keyframes flicker {
                 0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
@@ -101,13 +129,21 @@
     </head>
     <body>
         <h1 id="title">PeckyChicken</h1>
-        <button>Click Me!</button>
-
+        <h2>Games</h2>
 
         <div id="games-panel">
-            <div class="game">
-                <img src="" alt="">
-            </div>
+            <a href="https://peckychicken.github.io/quad-target" target="_blank">
+                <button class="game">
+                    <h1 class="game-title">Quad Target</h1>
+                    <img class="logo" src="quad_target_logo.png" alt="A circle with the operations +, -, ×, ÷ and = with the numbers 12, 54, 66 and 67 floating around it underneath text 'Quad Target'.">
+                </button>
+            </a>
+            <a href="https://peckychicken.itch.io/gem-miner-2" target="_blank">
+                <button class="game">
+                    <h1 class="game-title">Gem Miner 2</h1>
+                    <img class="logo" src="gem_miner_logo.ico" alt="Curved text reading 'Gem Miner 2' above a cartoonish pickaxe and some colorful gems.">
+                </button>
+            </a>
         </div>
     </body>
 </html>

@@ -3,15 +3,111 @@
     <head>
         <title>PeckyChicken</title>
         <style>
+            :root {
+                --neon-red: #ff073a;
+                --neon-orange: #ff6b00;
+                --neon-yellow: #ffff33;
+                --neon-green: #39ff14;
+                --neon-cyan: #00ffff;
+                --neon-blue: #1f51ff;
+                --neon-magenta: #ff00ff;
+                --neon-purple: #9d00ff;
+                --neon-pink: #ff6bcb;
+                --neon-white: #f8f8ff;
+
+                /* Dark-neon background variants */
+                --dark-neon-red: #7a001a;
+                --dark-neon-orange: #7a2f00;
+                --dark-neon-yellow: #666600;
+                --dark-neon-green: #0f4d07;
+                --dark-neon-cyan: #005f5f;
+                --dark-neon-blue: #0c1f7a;
+                --dark-neon-magenta: #7a0066;
+                --dark-neon-purple: #3d0066;
+                --dark-neon-pink: #7a2f63;
+                --dark-neon-white: #2b2b2e;
+            }
+
             body{
-                background-color: black;
-                color: white;
+                background: linear-gradient(150deg,var(--dark-neon-yellow), var(--dark-neon-white), var(--dark-neon-purple), black);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                color: var(--neon-white);
                 text-align:center;
-                font-family: Arial, Helvetica, sans-serif
-            };
+                font-family: Arial, Helvetica, sans-serif;
+                text-shadow:currentColor 0 0 5px;
+
+                
+            }
+            body::selection{
+                background: var(--neon-cyan);
+                color: var(--dark-neon-cyan);
+                text-shadow:currentColor 0 0 5px,0 0 10px;
+            }
+            button{
+                background: transparent;
+                color: var(--neon-cyan);
+                border: currentColor 2px solid;
+                padding: 10px 20px;
+                font-size: 1.2rem;
+
+                box-shadow:currentColor 0 0 5px;
+            }
+            button:hover{
+                cursor: pointer;
+                box-shadow:currentColor 0 0 5px, 0 0 10px;
+
+            }
+            button:active{
+                color: var(--neon-white);
+            }
+            .game{
+                width: fit-content;
+                height: fit-content;
+                max-width: 100%;
+                max-height: 100%;
+                min-width: 100px;
+                min-height: 100px;
+                color: var(--neon-cyan);
+                border: currentColor 2px solid;
+                box-shadow: currentColor 0 0 5px, 0 0 10px;
+                padding: 20px;
+                margin: 20px;
+                border-radius: 10px;
+                display: block;
+            }
+            #title{
+                font-size: 50px;
+            }
+            #games-panel{
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            @keyframes flicker {
+                0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                    text-shadow:
+                        0 0 5px   currentColor;
+                }
+                20%, 24%, 55% {
+                    text-shadow: none;
+                }
+            }
+
         </style>
     </head>
     <body>
-        <h1>PeckyChicken</h1>
+        <h1 id="title">PeckyChicken</h1>
+        <button>Click Me!</button>
+
+
+        <div id="games-panel">
+            <div class="game">
+                <img src="" alt="">
+            </div>
+        </div>
     </body>
 </html>
